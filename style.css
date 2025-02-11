@@ -1,0 +1,177 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #f5f6fa;
+    --border-color: #dcdde1;
+    --hover-color: #e1e2e6;
+    --text-color: #2d3436;
+    --header-bg: #34495e;
+    --filter-bg: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--filter-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.reset-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.reset-button:hover {
+    background-color: #1e2a37;
+}
+
+.filter-button:hover {
+    background-color: var(--hover-color);
+}
+
+.filter-button.active {
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+.filter-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 200px;
+    margin-top: 0.5rem;
+}
+
+.filter-options.show {
+    display: block;
+}
+
+.filter-option {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.filter-option:hover {
+    background-color: var(--hover-color);
+}
+
+.filter-option.selected {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.table-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--header-bg);
+    color: white;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+tr:hover {
+    background-color: var(--hover-color);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .data-termino,
+    .categoria,
+    .local,
+    .tipo {
+        display: none;
+    }
+
+    th, td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .filter-button, .reset-button {
+        width: 100%;
+    }
+
+    .filter-options {
+        width: 100%;
+    }
+}
